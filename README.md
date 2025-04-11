@@ -8,7 +8,7 @@ Este sitio web es una muestra de mis proyectos, habilidades y experiencia en des
 
 ---
 
-## 🛠🌟 Tecnologías utilizadas
+## 🌟 Tecnologías utilizadas
 
 - HTML5
 - CSS3 (Flexbox, Grid)
