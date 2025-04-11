@@ -4,7 +4,7 @@
 Este sitio web es una muestra de mis proyectos, habilidades y experiencia en desarrollo web, diseño, y más.
 
 🚀 [Ver el sitio en vivo](https://ezequieledojeda.github.io/Portfolio/)  
-📫 Contacto: [ojedaezequiel083@gmail.com](mailto:ojedaezequiel083@gmail.com)
+📫 Contacto: [Gmail](mailto:ojedaezequiel083@gmail.com)
 
 ---
 
@@ -22,7 +22,7 @@ El objetivo de este portfolio es mostrar de forma clara y atractiva quién soy c
 ---
 
 ## 🙌 Gracias por visitar
-¡Gracias por pasarte por acá! Si te interesa colaborar o tenés alguna propuesta laboral, no dudes en escribirme.
+Si te interesa colaborar o tenés alguna propuesta laboral, no dudes en escribirme.
 
 ---
 
