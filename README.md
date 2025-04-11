@@ -1,9 +1,9 @@
 # 🌐 Mi Portfolio Web
 
 ¡Hola! 👋 Bienvenido/a a mi portfolio online.  
-Este sitio web es una muestra de mis proyectos, habilidades y experiencia en desarrollo web, diseño, marketing digital y más.
+Este sitio web es una muestra de mis proyectos, habilidades y experiencia en desarrollo web, diseño, y más.
 
-🚀 [Ver el sitio en vivo](https://ezequieledojeda.github.io/Portfolio/index.html)  
+🚀 [Ver el sitio en vivo](https://ezequieledojeda.github.io/Portfolio/)  
 📫 Contacto: [ojedaezequiel083@gmail.com](mailto:ojedaezequiel083@gmail.com)
 
 ---
