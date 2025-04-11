@@ -1,0 +1,1053 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Portfolio de Ezequiel</title>
+	<link rel="icon" href="https://cdn-icons-png.flaticon.com/512/4143/4143725.png" type="image/x-icon" />
+    <style>
+      :root {
+        --color-primary: #0a66c2;
+        --color-secondary: #0077b5;
+        --color-dark: #1d2026;
+        --color-light: #f5f7fa;
+        --color-gray: #6c757d;
+        --color-light-gray: #e9ecef;
+        --shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+        --transition: all 0.3s ease;
+      }
+      
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+        font-family: 'Roboto', Arial, sans-serif;
+        scroll-behavior: smooth;
+      }
+      
+      body {
+        background-color: var(--color-light);
+        color: var(--color-dark);
+        line-height: 1.6;
+      }
+      
+      .container {
+        max-width: 1200px;
+        margin: 0 auto;
+        padding: 0 20px;
+        width: 100%;
+      }
+      
+      /* Header */
+      header {
+        background-color: var(--color-dark);
+        position: fixed;
+        width: 100%;
+        top: 0;
+        z-index: 100;
+        box-shadow: var(--shadow);
+      }
+      
+      .nav {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 15px 0;
+      }
+      
+      .nav__logo {
+        color: var(--color-light);
+        font-size: 24px;
+        font-weight: 700;
+        text-decoration: none;
+      }
+      
+      .nav__menu {
+        display: flex;
+        list-style: none;
+      }
+      
+      .nav__item {
+        margin-left: 30px;
+      }
+      
+      .nav__link {
+        color: var(--color-light);
+        text-decoration: none;
+        font-weight: 500;
+        transition: var(--transition);
+      }
+      
+      .nav__link:hover {
+        color: var(--color-primary);
+      }
+      
+      .menu-toggle {
+        display: none;
+        background: none;
+        border: none;
+        color: var(--color-light);
+        font-size: 24px;
+        cursor: pointer;
+      }
+      
+      /* Hero Section */
+      .hero {
+        background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url('./image2.jpg') center/cover;
+        height: 100vh;
+        display: flex;
+        align-items: center;
+        text-align: center;
+        color: var(--color-light);
+        padding-top: 80px;
+      }
+      
+      .hero__content {
+        max-width: 800px;
+        margin: 0 auto;
+      }
+      
+      .hero__title {
+        font-size: 48px;
+        margin-bottom: 20px;
+        animation: fadeIn 1s ease;
+      }
+      
+      .hero__subtitle {
+        font-size: 24px;
+        margin-bottom: 30px;
+        opacity: 0.9;
+      }
+      
+      .hero__description {
+        font-size: 18px;
+        margin-bottom: 40px;
+        opacity: 0.8;
+      }
+      
+      /* About Section */
+      .about {
+        padding: 100px 0;
+      }
+      
+      .section__title {
+        font-size: 36px;
+        text-align: center;
+        margin-bottom: 60px;
+        position: relative;
+      }
+      
+      .section__title::after {
+        content: '';
+        position: absolute;
+        width: 100px;
+        height: 3px;
+        background-color: var(--color-primary);
+        bottom: -15px;
+        left: 50%;
+        transform: translateX(-50%);
+      }
+      
+      .about__content {
+        display: flex;
+        align-items: center;
+        gap: 40px;
+      }
+      
+      .about__image {
+        flex: 1;
+      }
+      
+      .about__image img {
+        width: 100%;
+        border-radius: 10px;
+        box-shadow: var(--shadow);
+      }
+      
+      .about__text {
+        flex: 1;
+      }
+      
+      .about__text h3 {
+        font-size: 24px;
+        margin-bottom: 20px;
+      }
+      
+      .about__text p {
+        margin-bottom: 20px;
+      }
+      
+      /* Skills Section */
+      .skills {
+        padding: 100px 0;
+        background-color: var(--color-light-gray);
+      }
+      
+      .skills__container {
+        display: grid;
+        grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+        gap: 30px;
+      }
+      
+      .skill {
+        background-color: var(--color-light);
+        padding: 20px;
+        border-radius: 10px;
+        box-shadow: var(--shadow);
+        text-align: center;
+        transition: var(--transition);
+      }
+      
+      .skill:hover {
+        transform: translateY(-5px);
+      }
+      
+      .skill__icon {
+        font-size: 40px;
+        margin-bottom: 15px;
+        color: var(--color-primary);
+      }
+      
+      /* Projects Section */
+      .projects {
+        padding: 100px 0;
+      }
+      
+      .projects__container {
+        display: grid;
+        grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+        gap: 30px;
+      }
+      
+      .project {
+        background-color: var(--color-light);
+        border-radius: 10px;
+        overflow: hidden;
+        box-shadow: var(--shadow);
+        transition: var(--transition);
+        height: 100%;
+        display: flex;
+        flex-direction: column;
+      }
+      
+      .project:hover {
+        transform: translateY(-5px);
+      }
+      
+      .project__image {
+        width: 100%;
+        height: 200px;
+        object-fit: cover;
+      }
+      
+      .project__content {
+        padding: 20px;
+        flex-grow: 1;
+        display: flex;
+        flex-direction: column;
+      }
+      
+      .project__title {
+        font-size: 20px;
+        margin-bottom: 10px;
+      }
+      
+      .project__description {
+        margin-bottom: 20px;
+        color: var(--color-gray);
+        font-size: 16px;
+        flex-grow: 1;
+      }
+      
+      .project__links {
+        display: flex;
+        gap: 10px;
+        margin-top: auto;
+      }
+      
+      .project__inactive {
+        font-style: italic;
+        color: var(--color-gray);
+        margin-top: 10px;
+      }
+      
+      /* Button */
+      .btn {
+        display: inline-block;
+        background-color: var(--color-primary);
+        color: var(--color-light);
+        padding: 12px 30px;
+        border-radius: 5px;
+        text-decoration: none;
+        font-weight: 500;
+        transition: var(--transition);
+        border: none;
+        cursor: pointer;
+      }
+      
+      .btn:hover {
+        background-color: var(--color-secondary);
+        transform: translateY(-2px);
+      }
+      
+      .btn--outline {
+        background-color: transparent;
+        border: 2px solid var(--color-primary);
+        color: var(--color-primary);
+      }
+      
+      .btn--outline:hover {
+        background-color: var(--color-primary);
+        color: var(--color-light);
+      }
+      
+      /* Education Section */
+      .education {
+        padding: 100px 0;
+        background-color: var(--color-light-gray);
+      }
+      
+      .timeline {
+        position: relative;
+        max-width: 800px;
+        margin: 0 auto;
+      }
+      
+      .timeline::after {
+        content: '';
+        position: absolute;
+        width: 2px;
+        background-color: var(--color-gray);
+        top: 0;
+        bottom: 0;
+        left: 50%;
+        margin-left: -1px;
+      }
+      
+      .timeline__item {
+        padding: 10px 40px;
+        position: relative;
+        width: 50%;
+        box-sizing: border-box;
+      }
+      
+      .timeline__item::after {
+        content: '';
+        position: absolute;
+        width: 20px;
+        height: 20px;
+        background-color: var(--color-light);
+        border: 4px solid var(--color-primary);
+        border-radius: 50%;
+        top: 15px;
+        z-index: 1;
+      }
+      
+      .timeline__item--left {
+        left: 0;
+      }
+      
+      .timeline__item--right {
+        left: 50%;
+      }
+      
+      .timeline__item--left::after {
+        right: -12px;
+      }
+      
+      .timeline__item--right::after {
+        left: -12px;
+      }
+      
+      .timeline__content {
+        padding: 20px;
+        background-color: var(--color-light);
+        border-radius: 10px;
+        box-shadow: var(--shadow);
+      }
+      
+      .timeline__content h3 {
+        margin-bottom: 10px;
+        color: var(--color-primary);
+      }
+      
+      .timeline__content h4 {
+        margin-bottom: 10px;
+        color: var(--color-gray);
+      }
+      
+      /* Contact Section */
+      .contact {
+        padding: 100px 0 60px;
+      }
+      
+      .contact__content {
+        display: flex;
+        gap: 40px;
+      }
+      
+      .contact__info {
+        flex: 1;
+      }
+      
+      .contact__info h3 {
+        font-size: 24px;
+        margin-bottom: 20px;
+      }
+      
+      .contact__items {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 30px;
+      }
+      
+      .contact__item {
+        display: flex;
+        align-items: center;
+        margin-bottom: 20px;
+        flex: 1;
+        min-width: 250px;
+      }
+      
+      .contact__icon {
+        width: 50px;
+        height: 50px;
+        background-color: var(--color-primary);
+        color: var(--color-light);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        border-radius: 50%;
+        margin-right: 20px;
+        font-size: 20px;
+        box-shadow: 0 5px 15px rgba(10, 102, 194, 0.3);
+      }
+      
+      .contact__item-content h4 {
+        font-size: 18px;
+        margin-bottom: 5px;
+        color: var(--color-dark);
+      }
+      
+      .contact__item-content a {
+        color: var(--color-primary);
+        text-decoration: none;
+        transition: var(--transition);
+      }
+      
+      .contact__item-content a:hover {
+        color: var(--color-secondary);
+      }
+      
+      .social {
+        margin-top: 40px;
+		text-align: center;
+      }
+      
+      .social__title {
+        font-size: 24px;
+        margin-bottom: 20px;
+        text-align: center;
+      }
+      
+      .social__links {
+        display: flex;
+        justify-content: center;
+        gap: 20px;
+      }
+      
+      .social__link {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 50px;
+        height: 50px;
+        background-color: var(--color-light);
+        color: var(--color-primary);
+        border-radius: 50%;
+        transition: var(--transition);
+        text-decoration: none;
+        font-size: 22px;
+        box-shadow: var(--shadow);
+      }
+      
+      .social__link:hover {
+        background-color: var(--color-primary);
+        color: var(--color-light);
+        transform: translateY(-5px);
+      }
+      
+      /* Footer */
+      footer {
+        background-color: var(--color-dark);
+        color: var(--color-light);
+        padding: 40px 0;
+      }
+      
+      .footer__content {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        flex-wrap: wrap;
+        gap: 30px;
+      }
+      
+      .footer__logo {
+        font-size: 24px;
+        font-weight: 700;
+      }
+      
+      .footer__nav {
+        display: flex;
+        gap: 20px;
+      }
+      
+      .footer__nav a {
+        color: var(--color-light);
+        text-decoration: none;
+        transition: var(--transition);
+      }
+      
+      .footer__nav a:hover {
+        color: var(--color-primary);
+      }
+      
+      .footer__copyright {
+        width: 100%;
+        text-align: center;
+        margin-top: 30px;
+        padding-top: 20px;
+        border-top: 1px solid rgba(255, 255, 255, 0.1);
+      }
+      
+      /* Media Queries */
+      @media (max-width: 992px) {
+        .hero__title {
+          font-size: 40px;
+        }
+        
+        .hero__subtitle {
+          font-size: 20px;
+        }
+      }
+      
+      @media (max-width: 768px) {
+        .menu-toggle {
+          display: block;
+        }
+        
+        .nav__menu {
+          position: fixed;
+          top: 70px;
+          left: -100%;
+          flex-direction: column;
+          background-color: var(--color-dark);
+          width: 100%;
+          text-align: center;
+          transition: 0.3s;
+          box-shadow: 0 10px 27px rgba(0, 0, 0, 0.05);
+          padding: 20px 0;
+        }
+        
+        .nav__menu.active {
+          left: 0;
+        }
+        
+        .nav__item {
+          margin: 15px 0;
+        }
+        
+        .about__content {
+          flex-direction: column;
+        }
+        
+        .hero__title {
+          font-size: 32px;
+        }
+        
+        .section__title {
+          font-size: 28px;
+        }
+        
+        .timeline::after {
+          left: 31px;
+        }
+        
+        .timeline__item {
+          width: 100%;
+          padding-left: 70px;
+          padding-right: 25px;
+        }
+        
+        .timeline__item--right {
+          left: 0;
+        }
+        
+        .timeline__item--left::after,
+        .timeline__item--right::after {
+          left: 19px;
+        }
+        
+        .contact__content {
+          flex-direction: column;
+        }
+        
+        .footer__content {
+          flex-direction: column;
+          text-align: center;
+        }
+        
+        .footer__nav {
+          justify-content: center;
+        }
+      }
+      
+      @media (max-width: 576px) {
+        .hero__title {
+          font-size: 28px;
+        }
+        
+        .hero__subtitle {
+          font-size: 18px;
+        }
+        
+        .hero__description {
+          font-size: 16px;
+        }
+        
+        .btn {
+          padding: 10px 20px;
+          font-size: 14px;
+        }
+        
+        .skills__container {
+          grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+        }
+        
+        .projects__container {
+          grid-template-columns: 1fr;
+        }
+      }
+      
+      /* Animations */
+      @keyframes fadeIn {
+        from {
+          opacity: 0;
+          transform: translateY(20px);
+        }
+        to {
+          opacity: 1;
+          transform: translateY(0);
+        }
+      }
+      
+      .fade-in {
+        animation: fadeIn 1s ease;
+      }
+    </style>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/js/all.min.js"></script>
+  </head>
+  <body>
+    <!-- Header -->
+    <header>
+      <div class="container">
+        <nav class="nav">
+          <a href="#home" class="nav__logo">Portfolio</a>
+          <button class="menu-toggle" id="menuToggle">
+            <i class="fas fa-bars"></i>
+          </button>
+          <ul class="nav__menu" id="navMenu">
+            <li class="nav__item"><a href="#home" class="nav__link">Inicio</a></li>
+            <li class="nav__item"><a href="#about" class="nav__link">Sobre Mí</a></li>
+            <li class="nav__item"><a href="#skills" class="nav__link">Habilidades</a></li>
+            <li class="nav__item"><a href="#projects" class="nav__link">Proyectos</a></li>
+            <li class="nav__item"><a href="#education" class="nav__link">Formación</a></li>
+            <li class="nav__item"><a href="#contact" class="nav__link">Contacto</a></li>
+          </ul>
+        </nav>
+      </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section id="home" class="hero">
+      <div class="container">
+        <div class="hero__content">
+          <h1 class="hero__title">Ezequiel Edgardo Ojeda</h1>
+          <h2 class="hero__subtitle">Prompt Engineering | Desarrollador Web | Marketer Digital</h2>
+          <p class="hero__description">Creando soluciones digitales innovadoras a través del desarrollo web, aplicaciones móviles y estrategias de marketing.</p>
+          <div>
+            <a href="#projects" class="btn btn--outline">Ver Proyectos</a>
+            <a href="./CV.pdf" target="_blank" class="btn">Descargar CV</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="about">
+      <div class="container">
+        <h2 class="section__title">Sobre Mí</h2>
+        <div class="about__content">
+				  <div style="position: relative; overflow: hidden;">
+		  <img src="./image1.png" alt="Ezequiel Edgardo Ojeda"
+			style="
+			  -webkit-mask-image: linear-gradient(to bottom, black 70%, transparent 100%);
+			  mask-image: linear-gradient(to bottom, black 70%, transparent 100%);
+			"
+		  />
+		</div>
+          <div class="about__text">
+            <h3>¡Hola! Soy Ezequiel</h3>
+            <p>
+              Soy un desarrollador versátil con experiencia en el desarrollo de aplicaciones móviles, extensiones web y publicación de contenido digital. Mi formación académica en Economía Social y Desarrollo Local, combinada con especializaciones en inteligencia artificial, ciberseguridad y marketing digital, me permite abordar proyectos desde múltiples perspectivas.
+            </p>
+            <p>
+              Como desarrollador autónomo, he creado y publicado aplicaciones en Google Play Store y Amazon Appstore, extensiones para Chrome Web Store, y he escrito contenido para plataformas como Google Books y Amazon Kindle. También colaboro con organizaciones locales para implementar proyectos de desarrollo comunitario.
+            </p>
+            <p>
+              Me apasiona la tecnología y su potencial para generar impacto positivo. Mi enfoque combina habilidades técnicas con una visión centrada en soluciones prácticas y sostenibles.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Skills Section -->
+    <section id="skills" class="skills">
+      <div class="container">
+        <h2 class="section__title">Mis Habilidades</h2>
+        <div class="skills__container">
+          <div class="skill">
+            <div class="skill__icon">
+              <i class="fas fa-code"></i>
+            </div>
+            <h3>Desarrollo Web</h3>
+            <p>HTML5, CSS3, JavaScript</p>
+          </div>
+          <div class="skill">
+            <div class="skill__icon">
+              <i class="fas fa-mobile-alt"></i>
+            </div>
+            <h3>Desarrollo Mobile</h3>
+            <p>Aplicaciones Android</p>
+          </div>
+          <div class="skill">
+            <div class="skill__icon">
+              <i class="fas fa-puzzle-piece"></i>
+            </div>
+            <h3>Extensiones</h3>
+            <p>Chrome Web Store</p>
+          </div>
+          <div class="skill">
+            <div class="skill__icon">
+              <i class="fas fa-chart-line"></i>
+            </div>
+            <h3>Marketing Digital</h3>
+            <p>SEO, SEM, Analítica Web</p>
+          </div>
+          <div class="skill">
+            <div class="skill__icon">
+              <i class="fas fa-project-diagram"></i>
+            </div>
+            <h3>Gestión de Proyectos</h3>
+            <p>Planificación y seguimiento</p>
+          </div>
+          <div class="skill">
+            <div class="skill__icon">
+              <i class="fas fa-book"></i>
+            </div>
+            <h3>Escritura</h3>
+            <p>Publicaciones digitales</p>
+          </div>
+          <div class="skill">
+            <div class="skill__icon">
+              <i class="fas fa-brain"></i>
+            </div>
+            <h3>Inteligencia Artificial</h3>
+            <p>Implementación y uso</p>
+          </div>
+          <div class="skill">
+            <div class="skill__icon">
+              <i class="fas fa-shield-alt"></i>
+            </div>
+            <h3>Ciberseguridad</h3>
+            <p>Protocolos y mejores prácticas</p>
+          </div>
+		   <div class="skill">
+            <div class="skill__icon">
+              <i class="fas fa-database"></i>
+            </div>
+            <h3>Data Entry</h3>
+            <p>Gestión eficiente de datos</p>
+          </div>
+          <div class="skill">
+            <div class="skill__icon">
+              <i class="fas fa-chart-bar"></i>
+            </div>
+            <h3>Análisis de Datos</h3>
+            <p>Interpretación y visualización</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Projects Section -->
+    <section id="projects" class="projects">
+      <div class="container">
+        <h2 class="section__title">Mis Proyectos</h2>
+        <div class="projects__container">
+          
+		  <div class="project fade-in">
+            <img src="https://images.unsplash.com/photo-1621839673705-6617adf9e890?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=400&h=200&q=80" alt="Extensiones Chrome" class="project__image" />
+            <div class="project__content">
+              <h3 class="project__title">Extensiones Para Chrome</h3>
+              <p class="project__description">
+                Desarrollo de extensiones para el navegador Chrome que mejoran la productividad y experiencia de navegación de los usuarios. 
+              </p>
+              <div class="project__links">
+                <a href="https://chromewebstore.google.com/search/ezequiel%20edgardo%20ojeda" target="_blank" class="btn">Ver Extensiones</a>
+              </div>
+            </div>
+          </div>
+		  
+          <div class="project fade-in">
+            <img src="https://images.unsplash.com/photo-1551650975-87deedd944c3?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=400&h=200&q=80" alt="Aplicaciones Móviles" class="project__image" />
+            <div class="project__content">
+              <h3 class="project__title">Desarrollo de Aplicaciones Móviles</h3>
+              <p class="project__description">
+                Colección de aplicaciones desarrolladas y distribuidas en plataformas como Google Play, Amazon Appstore y Uptodown.
+              </p>
+              <div class="project__links">
+                <a href="https://play.google.com/store/apps/dev?id=7886307353497972179" target="_blank" class="btn">Google Play</a>
+                <a href="https://www.amazon.com/s?i=mobile-apps&rh=p_4%3AEzequiel%2BEdgardo%2BOjeda" target="_blank" class="btn btn--outline">Amazon</a>
+              </div>
+            </div>
+          </div>
+          
+          <div class="project fade-in">
+            <img src="https://images.unsplash.com/photo-1455541504462-57ebb2a9cec1?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=400&h=200&q=80" alt="Publicaciones" class="project__image" />
+            <div class="project__content">
+              <h3 class="project__title">Publicaciones Digitales</h3>
+              <p class="project__description">
+                Autor de diversos libros digitales publicados en plataformas como Google Books y Amazon Kindle.
+              </p>
+              <div class="project__links">
+                <a href="https://play.google.com/store/books/author?id=Ezequiel+Edgardo+Ojeda" target="_blank" class="btn">Google Books</a>
+                <a href="https://www.amazon.com/s?k=ezequiel+edgardo+ojeda&i=stripbooks-intl-ship&rh=n%3A283155%2Cp_n_feature_browse-bin%3A2656022011&dc&language=es&ds=v1%3A6JQvFkRr9PRAVQ0KRsMrpHwmBlKAJPrHxelAoLmyes0&__mk_es_US=%C3%85M%C3%85%C5%BD%C3%95%C3%91&crid=5RECZD2127SE&qid=1725497994&rnid=618072011&sprefix=ezequiel+edgardo+ojeda%2Cstripbooks-intl-ship%2C407&ref=sr_nr_p_n_feature_browse-bin_1" target="_blank" class="btn btn--outline">Amazon</a>
+              </div>
+            </div>
+          </div>
+          
+		  <div class="project fade-in">
+            <img src="https://img.freepik.com/foto-gratis/herramientas-deportivas_53876-138077.jpg?semt=ais_hybrid&w=740" alt="Club Villa Libertad" class="project__image" />
+            <div class="project__content">
+              <h3 class="project__title">Proyecto Club Villa Libertad</h3>
+              <p class="project__description">
+                Proyecto desarrollado como parte de mi formación de Economía: Construcción de Tinglado Parabólico para el Club Social, Cultural y Deportivo "Villa Libertad" (2023).
+              </p>
+              <div class="project__links">
+                <a href="https://drive.google.com/file/d/1r-n39AVXTWJwSntjfr1NuXWz97LQV_3R/view" target="_blank" class="btn">Ver Proyecto</a>
+              </div>
+            </div>
+          </div>
+		  
+          <div class="project fade-in">
+            <img src="https://img.freepik.com/foto-gratis/mostrando-carro-carro-compras-linea-signo-grafico_53876-133967.jpg?semt=ais_hybrid&w=740" alt="WorldGPT" class="project__image" />
+            <div class="project__content">
+              <h3 class="project__title">WorldGPT</h3>
+              <p class="project__description">
+                Tienda Ecommerce especializada en productos digitales, lanzada en 2023 por Etsy.
+              </p>
+              <p class="project__inactive">Proyecto del 2023 (actualmente cerrado)</p>
+            </div>
+          </div>
+          
+          <div class="project fade-in">
+            <img src="https://milcapeguero.com/hubfs/Archivos%20P%C3%BAblicos/Beneficios%20del%20Marketing%20Digital.jpg" alt="Web-Ezequiel" class="project__image" />
+            <div class="project__content">
+              <h3 class="project__title">Web-Ezequiel</h3>
+              <p class="project__description">
+                Agencia de Marketing Digital fundada en 2021. Servicios de diseño web, estrategias de marketing digital, SEO, SEM y analítica web.
+              </p>
+			   <p class="project__inactive">Proyecto del 2021 (actualmente cerrado)</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Education Section -->
+    <section id="education" class="education">
+      <div class="container">
+        <h2 class="section__title">Formación Académica</h2>
+        <div class="timeline">
+          <div class="timeline__item timeline__item--right">
+            <div class="timeline__content">
+              <h3>Programación</h3>
+              <h4>Informatorio - Chaco</h4>
+              <p>2025</p>
+            </div>
+          </div>
+          <div class="timeline__item timeline__item--left">
+            <div class="timeline__content">
+              <h3>Inteligencia Artificial</h3>
+              <h4>Telecom Argentina y EducacionIT</h4>
+              <p>2024</p>
+            </div>
+          </div>
+          <div class="timeline__item timeline__item--right">
+            <div class="timeline__content">
+              <h3>Google Cybersecurity Professional</h3>
+              <h4>Coursera</h4>
+              <p>2024</p>
+            </div>
+          </div>
+          <div class="timeline__item timeline__item--left">
+            <div class="timeline__content">
+              <h3>Google Project Management Professional</h3>
+              <h4>Coursera</h4>
+              <p>2023</p>
+            </div>
+          </div>
+          <div class="timeline__item timeline__item--right">
+            <div class="timeline__content">
+              <h3>Tecnicatura Superior en Economía Social y Desarrollo Local</h3>
+              <h4>Instituto Barranqueras – UEP N°161</h4>
+              <p>2023</p>
+            </div>
+          </div>
+          <div class="timeline__item timeline__item--left">
+            <div class="timeline__content">
+              <h3>Digital Ad Degree</h3>
+              <h4>Aleph Group, Inc</h4>
+              <p>2022</p>
+            </div>
+          </div>
+          <div class="timeline__item timeline__item--right">
+            <div class="timeline__content">
+              <h3>Diplomado en Educación Financiera</h3>
+              <h4>CONDUSEF</h4>
+              <p>2022</p>
+            </div>
+          </div>
+          <div class="timeline__item timeline__item--left">
+            <div class="timeline__content">
+              <h3>Diplomado en Desarrollo de Sitios Web y Aplicaciones Móviles</h3>
+              <h4>Fundación Carlos Slim</h4>
+              <p>2022</p>
+            </div>
+          </div>
+          <div class="timeline__item timeline__item--right">
+            <div class="timeline__content">
+              <h3>Máster en Marketing Digital y Analítica Web</h3>
+              <h4>Neetwork.com</h4>
+              <p>2021</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Contact Section -->
+<section id="contact" class="contact" style="padding: 80px 0;">
+  <div class="container">
+    <div class="contact__content" style="display: flex; flex-wrap: wrap; gap: 40px; justify-content: center; text-align: center;">
+
+      <!-- Redes Sociales -->
+      <div class="contact__info" style="flex: 1; min-width: 250px;">
+        <h3 style="margin-bottom: 20px;" class="section__title">Mis Redes</h3>
+        <div class="social__links" style="justify-content: center; padding: 20px; ">
+          <a href="https://github.com/EzequielEdOjeda/" target="_blank" class="social__link" title="GitHub">
+            <i class="fab fa-github"></i>
+          </a>
+          <a href="https://ar.linkedin.com/in/ezequiel-edgardo-ojeda" target="_blank" class="social__link" title="LinkedIn">
+            <i class="fab fa-linkedin-in"></i>
+          </a>
+          <a href="https://www.youtube.com/@EzequielEdgardoOjeda" target="_blank" class="social__link" title="YouTube">
+            <i class="fab fa-youtube"></i>
+          </a>
+        </div>
+      </div>
+
+      <!-- Contáctame -->
+		<div class="contact__info" style="flex: 1; min-width: 250px;">
+		  <h3 style="margin-bottom: 20px;" class="section__title">Contáctame</h3>
+		  <div class="social__links" style="justify-content: center; padding: 20px;">
+			<a href="mailto:ojedaezequiel083@gmail.com" target="_blank" class="social__link" title="Enviar Email">
+			  <i class="fas fa-envelope"></i>
+			</a>
+			<a href="tel:+543624031997" class="social__link" title="Llamar">
+			  <i class="fas fa-phone"></i>
+			</a>
+			<a href="https://wa.me/543624031997" target="_blank" class="social__link" title="WhatsApp">
+			  <i class="fab fa-whatsapp"></i>
+			</a>
+		  </div>
+		</div>
+
+      <!-- Secciones -->
+      <div class="contact__info" style="flex: 1; min-width: 250px;">
+        <h3 style="margin-bottom: 20px;" class="section__title">Secciones</h3>
+        <ul style="padding: 20px; list-style: none; display: flex; justify-content: center; gap: 10px; flex-wrap: wrap;">
+          <li>
+            <a href="#home" style="display: inline-block; padding: 8px 16px; font-weight: bold; color: black; text-decoration: none; border-radius: 5px; transition: 0.3s;" onmouseover="this.style.backgroundColor='#0a66c2'; this.style.color='white'" onmouseout="this.style.backgroundColor='transparent'; this.style.color='black'">Inicio</a>
+          </li>
+          <li>
+            <a href="#about" style="display: inline-block; padding: 8px 16px; font-weight: bold; color: black; text-decoration: none; border-radius: 5px; transition: 0.3s;" onmouseover="this.style.backgroundColor='#0a66c2'; this.style.color='white'" onmouseout="this.style.backgroundColor='transparent'; this.style.color='black'">Sobre Mí</a>
+          </li>
+          <li>
+            <a href="#skills" style="display: inline-block; padding: 8px 16px; font-weight: bold; color: black; text-decoration: none; border-radius: 5px; transition: 0.3s;" onmouseover="this.style.backgroundColor='#0a66c2'; this.style.color='white'" onmouseout="this.style.backgroundColor='transparent'; this.style.color='black'">Habilidades</a>
+          </li>
+          <li>
+            <a href="#projects" style="display: inline-block; padding: 8px 16px; font-weight: bold; color: black; text-decoration: none; border-radius: 5px; transition: 0.3s;" onmouseover="this.style.backgroundColor='#0a66c2'; this.style.color='white'" onmouseout="this.style.backgroundColor='transparent'; this.style.color='black'">Proyectos</a>
+          </li>
+          <li>
+            <a href="#education" style="display: inline-block; padding: 8px 16px; font-weight: bold; color: black; text-decoration: none; border-radius: 5px; transition: 0.3s;" onmouseover="this.style.backgroundColor='#0a66c2'; this.style.color='white'" onmouseout="this.style.backgroundColor='transparent'; this.style.color='black'">Formación</a>
+          </li>
+        </ul>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+    <!-- Footer -->
+    <footer>
+      <div class="container" style="text-align:center">
+        <p>&copy;Copyright 2025</p>
+      </div>
+    </footer>
+
+    <script>
+      // Smooth scrolling for navigation links
+      document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+        anchor.addEventListener('click', function(e) {
+          e.preventDefault();
+          
+          const targetId = this.getAttribute('href');
+          document.querySelector(targetId).scrollIntoView({
+            behavior: 'smooth'
+          });
+        });
+      });
+      
+      // Fade-in animation for elements on scroll
+      const fadeElements = document.querySelectorAll('.project');
+      
+      const fadeInOnScroll = () => {
+        fadeElements.forEach(element => {
+          const elementTop = element.getBoundingClientRect().top;
+          const windowHeight = window.innerHeight;
+          
+          if (elementTop < windowHeight - 100) {
+            element.classList.add('fade-in');
+          }
+        });
+      };
+      
+      window.addEventListener('scroll', fadeInOnScroll);
+      window.addEventListener('load', fadeInOnScroll);
+    </script>
+  </body>
+</html>
