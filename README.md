@@ -23,7 +23,3 @@ El objetivo de este portfolio es mostrar de forma clara y atractiva quién soy c
 
 ## 🙌 Gracias por visitar
 Si te interesa colaborar o tenés alguna propuesta laboral, no dudes en escribirme.
-
----
-
-## No olvides darle ⭐ a este repositorio si te gustó.
