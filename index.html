@@ -63,6 +63,12 @@
         font-weight: 700;
         text-decoration: none;
       }
+	  
+	  .nav__icon {
+		  width: 20px; 
+		  height: auto;
+		  object-fit: contain;
+		}
       
       .nav__menu {
         display: flex;
@@ -669,7 +675,10 @@
     <header>
       <div class="container">
         <nav class="nav">
-          <a href="#home" class="nav__logo">Portfolio</a>
+          <a href="#home" class="nav__logo">
+			<img src="./assets/icon.png" alt="Logo" class="nav__icon">
+			Portfolio
+		  </a>
           <button class="menu-toggle" id="menuToggle">
             <i class="fas fa-bars"></i>
           </button>
@@ -854,7 +863,78 @@
               </div>
             </div>
           </div>
-          
+		  
+		   <div class="project fade-in">
+            <img src="./assets/images/proyectos/image7.png" alt="Vexo" class="project__image" />
+            <div class="project__content">
+              <h3 class="project__title">Vexo</h3>
+              <p class="project__description">Plataforma digital interactiva, donde los usuarios pueden publicar productos para subastarlos o intercambiarlo.</p>
+              <div class="project__links">
+                <a href="https://vexo.pythonanywhere.com/" target="_blank" class="btn">Ver Sitio</a>
+                <a href="https://github.com/EzequielEdOjeda/VEXO" target="_blank" class="btn btn--outline">GitHub</a>
+              </div>
+            </div>
+          </div>
+		  
+		  <div class="project fade-in">
+            <img src="./assets/images/proyectos/image8.png" alt="Sandwicheria El 10" class="project__image" />
+            <div class="project__content">
+              <h3 class="project__title">Sandwichería El 10</h3>
+              <p class="project__description">Web para comercio gastronómico, utilizando Firebase como backend para la gestión de productos, avisos y autenticación de administradores en tiempo real.</p>
+              <div class="project__links">
+                <a href="https://sandwicheriael10.netlify.app/" target="_blank" class="btn">Ver Sitio</a>
+                <a href="https://github.com/EzequielEdOjeda/Sandwicheria-El-10" target="_blank" class="btn btn--outline">GitHub</a>
+              </div>
+            </div>
+          </div>
+
+          <div class="project fade-in">
+            <img src="./assets/images/proyectos/image9.png" alt="Mi Blog" class="project__image" />
+            <div class="project__content">
+              <h3 class="project__title">Mi Blog</h3>
+              <p class="project__description">Blog desarrollado con Django y Python para publicación de artículos, hecho para el curso de Desarrollo Web del Informatorio.</p>
+              <div class="project__links">
+                <a href="https://miblog.pythonanywhere.com/" target="_blank" class="btn">Ver Sitio</a>
+                <a href="https://github.com/EzequielEdOjeda/Blog_Django" target="_blank" class="btn btn--outline">GitHub</a>
+              </div>
+            </div>
+          </div>
+
+          <div class="project fade-in">
+            <img src="./assets/images/proyectos/image10.png" alt="Cuaderno Global" class="project__image" />
+            <div class="project__content">
+              <h3 class="project__title">Cuaderno Global: Editorial Digital</h3>
+				<p class="project__description">
+				  Una editorial donde el autor invierte en el <strong>servicio completo</strong> para que su obra sea compartida <strong>gratuitamente</strong> con el mundo. 
+				</p>
+              <div class="project__links">
+                <a href="https://cuadernoglobal.vercel.app/" target="_blank" class="btn">Ver Sitio</a>
+              </div>
+            </div>
+          </div>
+
+          <div class="project fade-in">
+            <img src="./assets/images/proyectos/image11.png" alt="Proyectos VB6" class="project__image" />
+            <div class="project__content">
+              <h3 class="project__title">Proyectos VB 6</h3>
+              <p class="project__description">Recopilación de software y herramientas desarrolladas en Visual Basic 6.</p>
+              <div class="project__links">
+                <a href="https://github.com/EzequielEdOjeda/Proyectos-en-Visual-Basic-6" target="_blank" class="btn">Ver Proyectos VB6</a>
+              </div>
+            </div>
+          </div>
+
+          <div class="project fade-in">
+            <img src="./assets/images/proyectos/image12.png" alt="Más Proyectos" class="project__image" />
+            <div class="project__content">
+              <h3 class="project__title">Más Proyectos</h3>
+              <p class="project__description">Explora el resto de mis repositorios y desarrollos en mi perfil oficial.</p>
+              <div class="project__links">
+                <a href="https://github.com/EzequielEdOjeda?tab=repositories" target="_blank" class="btn">Ver Repos</a>
+              </div>
+            </div>
+          </div>
+		  
 		  <div class="project fade-in">
             <img src="./assets/images/proyectos/image4.png" alt="Club Villa Libertad" class="project__image" />
             <div class="project__content">
