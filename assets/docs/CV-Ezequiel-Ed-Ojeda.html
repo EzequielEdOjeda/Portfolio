@@ -1,0 +1,313 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ezequiel Ed. Ojeda - CV</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Inter', 'Segoe UI', Roboto, sans-serif;
+        }
+        body {
+            background: #eef2f6;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 1.5rem 0.8rem;
+            min-height: 100vh;
+        }
+        .cv {
+            max-width: 1200px;
+            width: 100%;
+            background: white;
+            border-radius: 24px;
+            box-shadow: 0 15px 30px -10px rgba(0,20,40,0.2);
+            padding: 1.5rem 1.8rem;
+        }
+        /* Header compacto */
+        .header h1 {
+            font-size: 2.8rem;
+            font-weight: 700;
+            letter-spacing: -0.5px;
+            color: #0a1e2f;
+            border-left: 6px solid #1e5f9e;
+            padding-left: 1rem;
+            line-height: 1.1;
+        }
+        .header .subhead {
+            font-size: 1.2rem;
+            font-weight: 400;
+            color: #2c445e;
+            margin-top: 0.2rem;
+            padding-left: 1.5rem;
+        }
+        /* Contacto */
+        .contact-bar {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.8rem 1.5rem;
+            background: #f4f8ff;
+            border-radius: 40px;
+            padding: 0.6rem 1.5rem;
+            margin: 1.2rem 0 1rem 0;
+            border: 1px solid #cbd9ec;
+            font-size: 0.85rem;
+            justify-content: center;
+        }
+        .contact-item {
+            display: flex;
+            align-items: center;
+            gap: 6px;
+            color: #103450;
+            font-weight: 500;
+        }
+        .contact-item i {
+            width: 1.2rem;
+            color: #1e5f9e;
+            font-size: 0.95rem;
+        }
+        .contact-item a {
+            color: #103450;
+            text-decoration: none;
+            border-bottom: 1px dotted transparent;
+        }
+        .contact-item a:hover {
+            border-bottom: 1px dotted #1e5f9e;
+        }
+        
+        /* Perfil Profesional */
+        .perfil-text {
+            font-size: 0.9rem;
+            line-height: 1.5;
+            color: #152b3c;
+            margin-bottom: 1.2rem;
+            padding: 0 0.5rem;
+        }
+
+        /* Grid 2 columnas */
+        .grid-2 {
+            display: grid;
+            grid-template-columns: 1.1fr 0.9fr;
+            gap: 1.5rem;
+            align-items: start;
+        }
+        /* Secciones */
+        .section {
+            margin-bottom: 1rem;
+            break-inside: avoid;
+        }
+        .section h2 {
+            font-size: 1.2rem;
+            font-weight: 600;
+            color: #0b2b44;
+            border-bottom: 2.5px solid #1e5f9e;
+            padding-bottom: 0.2rem;
+            margin-bottom: 0.6rem;
+            display: inline-block;
+        }
+        .section ul {
+            list-style: none;
+        }
+        .section li {
+            margin-bottom: 0.5rem;
+            padding-left: 1.2rem;
+            position: relative;
+            font-size: 0.85rem;
+            line-height: 1.4;
+            color: #152b3c;
+        }
+        .section li::before {
+            content: "▹";
+            position: absolute;
+            left: 0;
+            color: #1e5f9e;
+            font-size: 0.95rem;
+        }
+        /* Habilidades agrupadas */
+        .habilidades ul {
+            display: flex;
+            flex-direction: column;
+            gap: 0.3rem;
+        }
+        .habilidades li {
+            width: 100%;
+        }
+        /* Portfolio compacto */
+        .portfolio-block {
+            background: #f0f5fc;
+            border-radius: 12px;
+            padding: 0.8rem 1.2rem;
+            margin: 0.8rem 0 0 0;
+            border: 1px solid #bdd0e8;
+        }
+        .portfolio-item {
+            display: flex;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 0.4rem 0.8rem;
+            margin-bottom: 0.5rem;
+        }
+        .portfolio-item:last-child {
+            margin-bottom: 0;
+        }
+        .portfolio-label {
+            font-weight: 700;
+            color: #0b2f4a;
+            font-size: 0.85rem;
+            min-width: 90px;
+            display: flex;
+            align-items: center;
+            gap: 5px;
+        }
+        .portfolio-label i {
+            color: #1e5f9e;
+            width: 1.2rem;
+        }
+        .portfolio-link {
+            font-size: 0.85rem;
+        }
+        .portfolio-link a {
+            text-decoration: none;
+            color: #1e5f9e;
+            font-weight: 500;
+        }
+        .portfolio-link a:hover {
+            text-decoration: underline;
+        }
+        /* Responsive */
+        @media (max-width: 700px) {
+            .grid-2 { grid-template-columns: 1fr; gap: 0.5rem; }
+            .header h1 { font-size: 2rem; }
+        }
+        /* IMPRESIÓN A4 UNA HOJA */
+        @media print {
+            body { background: white; padding: 0; display: block; }
+            .cv {
+                box-shadow: none;
+                border-radius: 0;
+                padding: 0.15in !important;
+                max-width: 100%;
+            }
+            body, .cv, p, li, a { font-size: 8pt; line-height: 1.3; }
+            .header h1 { font-size: 18pt; border-left: 4px solid #111; padding-left: 0.1in; margin-bottom: 0.05in; }
+            .header .subhead { font-size: 10pt; padding-left: 0.15in; }
+            .contact-bar {
+                background: none; border: 1px solid #aaa; padding: 0.05in 0.1in;
+                margin: 0.1in 0; gap: 0.1in; font-size: 7.5pt;
+            }
+            .contact-item i { color: black; }
+            .perfil-text { margin-bottom: 0.15in; font-size: 8.5pt; }
+            .section h2 { font-size: 11pt; border-bottom: 1.5px solid #111; margin-bottom: 0.05in; }
+            .section li { font-size: 8pt; margin-bottom: 0.04in; padding-left: 0.1in; }
+            .section li::before { color: black; }
+            .portfolio-block {
+                background: none; border: 1px solid #333; padding: 0.05in;
+                margin-top: 0.08in;
+            }
+            a { color: black; text-decoration: none; }
+            @page { size: A4; margin: 0.25in; }
+            .section, .portfolio-block { page-break-inside: avoid; }
+        }
+    </style>
+</head>
+<body>
+<div class="cv">
+    <div class="header">
+        <h1>EZEQUIEL EDGARDO OJEDA</h1>
+        <div class="subhead">Desarrollador Web · Prompt Engineer · Marketing Digital</div>
+    </div>
+
+    <div class="contact-bar">
+        <span class="contact-item"><i class="fas fa-phone-alt"></i> <a href="tel:+543624031997">+54 3624 031997</a></span>
+        <span class="contact-item"><i class="fas fa-envelope"></i> <a href="mailto:ojedaezequiel083@gmail.com">ojedaezequiel083@gmail.com</a></span>
+        <span class="contact-item"><i class="fab fa-linkedin"></i> <a href="https://ar.linkedin.com/in/ezequiel-edgardo-ojeda" target="_blank">linkedin.com/in/ezequiel-edgardo-ojeda</a></span>
+        <span class="contact-item"><i class="fas fa-map-marker-alt"></i> Resistencia, Chaco</span>
+    </div>
+
+    <p class="perfil-text">
+        Desarrollador Web y Prompt Engineer enfocado en crear soluciones de software eficientes y automatizadas. Experiencia comprobada combinando el desarrollo backend y frontend con estrategias de marketing digital y posicionamiento. Capacidad demostrada para gestionar proyectos de principio a fin, desde la arquitectura de bases de datos hasta la publicación y escalabilidad de productos digitales. Proactivo, autodidacta y con un fuerte enfoque en la resolución lógica de problemas.
+    </p>
+
+    <div class="grid-2">
+        <div>
+            <section class="section proyectos">
+                <h2>PROYECTOS DESTACADOS</h2>
+                <ul>
+                    <li><strong>Vexo (Marketplace):</strong> Desarrollo backend en Django con sistema de ofertas de intercambio (trade offers), gestión robusta de bases de datos y notificaciones.</li>
+                    <li><strong>Publicaciones Digitales:</strong> Autor y editor de obras publicadas en Amazon KDP y Google Books, gestionando la maquetación, estrategias de SEO y escalabilidad de ventas.</li>
+                    <li><strong>Mi Blog (Informatorio):</strong> Desarrollo integral de una aplicación web utilizando Python, el framework Django y MySQL.</li>
+                    <li><strong>Ecosistema de Apps y Extensiones:</strong> Desarrollo y despliegue de aplicaciones para Google Play, Amazon Appstore, Uptodown y extensiones en la Chrome Web Store.</li>
+                    <li><strong>Sandwichería El 10:</strong> Desarrollo de sitio web integrando Firebase para la gestión de datos en tiempo real y avisos al estilo popup.</li>
+                    <li><strong>Proyectos Adicionales:</strong> Cuaderno Global (Servicio de editorial digital), Tinglado Parabólico (Gestión de proyecto comunitario en Club Villa Libertad, 2023), WorldGPT (Tienda e-commerce en Etsy, 2023).</li>
+                </ul>
+            </section>
+            
+             <div class="section proyectos">
+                <h2>PORTFOLIO Y CERTIFICADOS</h2>
+					<div class="portfolio-item">
+                        <span class="portfolio-label"><i class="fas fa-folder-open"></i> Portfolio:</span>
+                        <span class="portfolio-link"><a href="https://micv.vercel.app/" target="_blank">micv.vercel.app</a></span>
+                    </div>
+                    <div class="portfolio-item">
+                        <span class="portfolio-label"><i class="fas fa-certificate"></i> Credenciales:</span>
+                        <span class="portfolio-link"><a href="https://bit.ly/3pl2SJf" target="_blank">bit.ly/3pl2SJf</a></span>
+                    </div>
+					<div class="portfolio-item">
+                        <span class="portfolio-label"><i class="fab fa-github"></i> GitHub:</span>
+                        <span class="portfolio-link"><a href="https://github.com/EzequielEdOjeda" target="_blank">github.com/EzequielEdOjeda</a></span>
+                    </div>
+            </div>
+
+        </div>
+
+        <div>
+
+            <section class="section">
+                <h2>EDUCACIÓN Y CERTIFICACIONES</h2>
+                <ul>
+				    <li><strong>Tec. Superior en Desarrollo de Software</strong> · IFTS N° 29 (Cursando)</li>
+                    <li><strong>Full Stack Open</strong> · Universidad de Helsinki / Houston Inc. (2026)</li>
+                    <li><strong>Computer Science for Web Programming</strong> · HarvardX / edX (2026)</li>
+                    <li><strong>Google IT Support Professional</strong> · Coursera (2026)</li>
+                    <li><strong>CS50x & CS50 Web</strong> · Harvard University (2026)</li>
+                    <li><strong>Google Prompting / AI Essentials</strong> · Coursera (2025)</li>
+                    <li><strong>Especialización React / Desarrollo Web</strong> · Informatorio (2025)</li>
+                    <li><strong>Analista Junior en Ciberseguridad</strong> · Cisco (2025)</li>
+                    <li><strong>Inteligencia Artificial</strong> · Telecom / EducacionIT (2024)</li>
+                    <li><strong>Google Cybersecurity / Project Management</strong> · Coursera (2023-2024)</li>
+                    <li><strong>Tec. Economía Social y Desarrollo Local</strong> · Inst. Barranqueras (2023)</li>
+                    <li><strong>Máster Marketing Digital y Analítica Web</strong> · Neetwork (2021)</li>
+                </ul>
+            </section>
+			
+			<section class="section habilidades">
+                <h2>HABILIDADES</h2>
+                <ul>
+                    <li><strong>Frontend:</strong> HTML5, CSS3, JavaScript, React</li>
+                    <li><strong>Backend & BD:</strong> Python, Django, Firebase, SQL</li>
+                    <li><strong>Herramientas & CMS:</strong> WordPress, Extensiones de Chrome</li>
+					<li><strong>Ofimática:</strong> Office (Word, Excel, PowerPoint).</li>
+                    <li><strong>Estrategia & IA:</strong> Prompt Engineering, Analítica Web, SEO, Marketing Digital</li>
+                    <li><strong>Resolución de Problemas:</strong> Capacidad analítica para abordar desafíos y compromiso con el aprendizaje continuo de IT.</li>
+                    <li><strong>Gestión del Tiempo:</strong> Organización eficiente en proyectos multitarea y plazos de entrega.</li>
+                </ul>
+            </section>
+			
+			<section class="section">
+			<h2>IDIOMAS</h2>
+			<ul style="display: flex; gap: 1.5rem; flex-wrap: wrap; list-style: none; padding-left: 0;">
+				<li style="padding-left: 0; margin-bottom: 0;"><i class="fas fa-check-circle" style="color: #1e5f9e; font-size: 0.8rem; margin-right: 5px;"></i><strong>Español:</strong> Nativo</li>
+				<li style="padding-left: 0; margin-bottom: 0;"><i class="fas fa-check-circle" style="color: #1e5f9e; font-size: 0.8rem; margin-right: 5px;"></i><strong>Inglés:</strong> Básico A2</li>
+				<li style="padding-left: 0; margin-bottom: 0;"><i class="fas fa-check-circle" style="color: #1e5f9e; font-size: 0.8rem; margin-right: 5px;"></i><strong>Portugués:</strong> Básico</li>
+			</ul>
+		</section>
+
+        </div>
+    </div>
+</div>
+</body>
+</html>
