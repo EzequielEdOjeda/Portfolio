@@ -135,7 +135,7 @@
       
       /* About Section */
       .about {
-        padding: 100px 0;
+        padding: 70px 0;
       }
       
       .section__title {
@@ -733,6 +733,20 @@
             <p>
               Me apasiona la tecnología y su potencial para generar impacto positivo. Mi enfoque combina habilidades técnicas con una visión centrada en soluciones prácticas y sostenibles.
             </p>
+			<div style="text-align: right; margin-top: 30px;" class="credly-container">
+    <a href="https://www.credly.com/users/ezequiel-edgardo-ojeda" target="_blank" style="display: inline-block; transition: transform 0.3s ease;" onmouseover="this.style.transform='scale(1.02)'" onmouseout="this.style.transform='scale(1)'">
+      <img src="./assets/credly.png" alt="Ver credenciales en Credly" style="width: 150px; height: auto;">
+    </a>
+  </div>
+  <style>
+  @media (max-width: 768px) {
+    .credly-container {
+      text-align: center !important;
+    }
+	.hero__title{padding-top: 20px;}
+  }
+</style>
+
           </div>
         </div>
       </div>
@@ -978,11 +992,46 @@
       <div class="container">
         <h2 class="section__title">Formación Académica</h2>
         <div class="timeline">
-		<div class="timeline__item timeline__item--left">
+		<div class="timeline__item timeline__item--right">
             <div class="timeline__content">
               <h3>Tecnicatura Superior en Desarrollo de Software</h3>
               <h4>IFTS N° 29</h4>
               <p>Cursando</p>
+            </div>
+          </div>
+		<div class="timeline__item timeline__item--left">
+            <div class="timeline__content">
+              <h3>Full Stack Developer</h3>
+              <h4>ITBA</h4>
+              <p>Cursando</p>
+            </div>
+          </div>
+		<div class="timeline__item timeline__item--right">
+            <div class="timeline__content">
+              <h3>Developers AI (Robótica con IA)</h3>
+              <h4>Telecom / EducacionIT</h4>
+              <p>Cursando</p>
+            </div>
+          </div>
+		<div class="timeline__item timeline__item--left">
+            <div class="timeline__content">
+              <h3>Google IT Automation with Python</h3>
+              <h4>Coursera</h4>
+              <p>2026</p>
+            </div>
+          </div>
+		<div class="timeline__item timeline__item--right">
+            <div class="timeline__content">
+              <h3>Google Business Intelligence</h3>
+              <h4>Coursera</h4>
+              <p>2026</p>
+            </div>
+          </div>
+		<div class="timeline__item timeline__item--left">
+            <div class="timeline__content">
+              <h3>Google AI Professional</h3>
+              <h4>Coursera</h4>
+              <p>2026</p>
             </div>
           </div>
 		<div class="timeline__item timeline__item--right">
@@ -1126,6 +1175,9 @@
           <a href="https://www.youtube.com/@EzequielEdgardoOjeda" target="_blank" class="social__link" title="YouTube">
             <i class="fab fa-youtube"></i>
           </a>
+		  <a href="https://www.instagram.com/ezequieledgardoojeda/" target="_blank" class="social__link" title="Instagram">
+            <i class="fab fa-instagram"></i>
+          </a>
         </div>
       </div>
 
@@ -1174,8 +1226,12 @@
     <!-- Footer -->
     <footer>
       <div class="container" style="text-align:center">
-        <p>&copy;Copyright 2025</p>
-      </div>
+    <p>&copy; Copyright <span id="year"></span></p>
+</div>
+
+<script>
+    document.getElementById('year').textContent = new Date().getFullYear();
+</script>
     </footer>
 	
 	<script>
