@@ -3,7 +3,7 @@
 ¡Hola! 👋 Bienvenido/a a mi portfolio online.  
 Este sitio web es una muestra de mis proyectos, habilidades y experiencia en desarrollo web, diseño, y más.
 
-🚀 [Ver el sitio en vivo](https://ezequieledojeda.github.io/Portfolio/)  
+🚀 [Ver el sitio en vivo](https://micv.vercel.app)  
 📫 Contacto: [Por Email](mailto:ojedaezequiel083@gmail.com)
 
 ---
