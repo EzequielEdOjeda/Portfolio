@@ -1,0 +1,14 @@
+{
+  "redirects": [
+    {
+      "source": "/certificados",
+      "destination": "https://www.dropbox.com/sh/m84pefoz32de4as/AAC45R8WemC_vVyMqkdlSZH1a?dl=0",
+      "permanent": true
+    },
+    {
+      "source": "/cartera",
+      "destination": "https://www.credly.com/users/ezequiel-edgardo-ojeda",
+      "permanent": true
+    }
+  ]
+}
