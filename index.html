@@ -757,6 +757,40 @@
   .hero__subtitle { animation: fadeInUp 0.9s cubic-bezier(0.22, 1, 0.36, 1) 0.25s both; }
   .hero__description { animation: fadeInUp 0.9s cubic-bezier(0.22, 1, 0.36, 1) 0.4s both; }
   .hero .btn      { animation: fadeInUp 0.9s cubic-bezier(0.22, 1, 0.36, 1) 0.55s both; }
+  
+  .project__media {
+  position: relative;
+  width: 100%;
+  height: 200px;
+  overflow: hidden;
+}
+
+.project__media .project__image {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: opacity 0.4s ease, transform 0.6s ease;
+}
+
+.project__image--gif {
+  opacity: 0;
+}
+
+.project:hover .project__image--gif {
+  opacity: 1;
+}
+
+.project:hover .project__image--static {
+  opacity: 0;
+}
+
+/* Mantener el zoom del hover existente */
+.project:hover .project__media .project__image {
+  transform: scale(1.06);
+}
 </style>
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
     <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/js/all.min.js"></script>
@@ -906,6 +940,17 @@
             </div>
           </div>
         </div>
+		
+		<div class="project">
+          <img src="./assets/images/proyectos/image13.png" alt="Datos Protegidos" class="project__image" />
+          <div class="project__content">
+            <h3 class="project__title">DiarIA - Inteligencia diaria</h3>
+            <p class="project__description">Blog con IA que reúne artículos, clima, noticias, cotizaciones y productos recomendados en una sola página.</p>
+            <div class="project__links">
+			<a href="https://diaria.ojedaezequiel083.workers.dev/" target="_blank" class="btn">Ver Sitio</a>
+			<a href="https://github.com/EzequielEdOjeda/DiarIA" target="_blank" class="btn btn--outline">Ver GitHub</a></div>
+          </div>
+        </div>
 
         <div class="project">
           <img src="./assets/images/proyectos/image14.png" alt="Club Deportivo" class="project__image" />
@@ -913,15 +958,6 @@
             <h3 class="project__title">Sistema de Club Deportivo</h3>
             <p class="project__description">Proyecto de análisis, diseño, desarrollo, prueba y puesta a punto de un sistema de escritorio para la gestión integral de un club deportivo.</p>
             <div class="project__links"><a href="https://github.com/EzequielEdOjeda/ClubDeportivo" target="_blank" class="btn">Ver Proyecto C#</a></div>
-          </div>
-        </div>
-
-        <div class="project">
-          <img src="./assets/images/proyectos/image13.png" alt="Datos Protegidos" class="project__image" />
-          <div class="project__content">
-            <h3 class="project__title">Datos Protegidos</h3>
-            <p class="project__description">Software sobre un sistema de escritorio para la gestión escolar con una base de datos de Microsoft Access.</p>
-            <div class="project__links"><a href="https://github.com/EzequielEdOjeda/Proyectos-en-Visual-Basic-6" target="_blank" class="btn">Ver Proyectos VB6</a></div>
           </div>
         </div>
 
@@ -971,7 +1007,10 @@
         </div>
 
         <div class="project">
-          <img src="./assets/images/proyectos/image11.png" alt="Proyectos VB6" class="project__image" />
+		  <div class="project__media">
+			<img src="./assets/images/proyectos/image11.png" alt="Proyectos VB6" class="project__image" />
+			<img src="./assets/images/proyectos/vb6.gif" alt="Animación" class="project__image project__image--gif" />
+		  </div>
           <div class="project__content">
             <h3 class="project__title">Proyectos VB 6</h3>
             <p class="project__description">Recopilación de software y herramientas desarrolladas en Visual Basic 6.</p>
@@ -980,7 +1019,10 @@
         </div>
 
         <div class="project">
-          <img src="./assets/images/proyectos/image12.png" alt="Más Proyectos" class="project__image" />
+		  <div class="project__media">
+			<img src="./assets/images/proyectos/image12.png" alt="Más Proyectos" class="project__image" />
+			<img src="./assets/images/proyectos/python.gif" alt="Animación" class="project__image project__image--gif" />
+		  </div>
           <div class="project__content">
             <h3 class="project__title">Más Proyectos</h3>
             <p class="project__description">Explora el resto de mis repositorios y desarrollos en mi perfil oficial.</p>
